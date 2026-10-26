@@ -10,5 +10,17 @@
     "cover": {
       "color": "/assets/comics/the-odds-booth/v4/001-watercolor.webp"
     }
+  },
+  {
+    "id": "002-the-confidence-booster",
+    "number": 2,
+    "title": "The Confidence Booster",
+    "topic": "Belief, commitment, and evidence",
+    "deck": "A sideshow can raise a needle in seconds. Phil asks what else has changed.",
+    "url": "/comics/the-confidence-booster/",
+    "scenes": 10,
+    "cover": {
+      "color": "/assets/comics/the-confidence-booster/001-watercolor.webp"
+    }
   }
 ]
