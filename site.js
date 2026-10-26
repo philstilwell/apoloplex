@@ -17,7 +17,7 @@
     const welcome = current.group === 'welcome';
     dialog.dataset.galleryGroup = current.group;
     setText('viewer-count', `${cast ? 'The cast' : welcome ? 'Welcome' : 'The park'} / ${index + 1} of ${group.length}`);
-    setText('viewer-kind', cast ? `Fictional comic role · Watercolor character sheet` : welcome ? `Watercolor · The whole cast` : `Watercolor · Apoloplex attraction`);
+    setText('viewer-kind', cast ? `Fictional comic role · Character sheet` : welcome ? `The whole cast` : `Apoloplex attraction`);
     document.getElementById('viewer-prev').disabled = group.length < 2;
     document.getElementById('viewer-next').disabled = group.length < 2;
     setText('viewer-title', current.title);

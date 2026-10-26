@@ -10,7 +10,7 @@ The site introduces eight apologist caricatures, creator Phil as a questioning p
 
 Characters and author credits use first names throughout the site, including labels printed inside the artwork.
 
-The public site uses watercolor throughout: all nine character portraits, their model sheets, park scenes and comic images, including enlarged views. Matching grayscale masters remain in the private production library for print.
+The public site uses color artwork throughout: all nine character portraits, their model sheets, park scenes and comic images, including enlarged views. Matching grayscale masters remain in the private production library for print.
 
 GitHub Pages serves the root of the main branch. The site uses plain HTML, CSS and JavaScript, with no external runtime dependencies. Gallery links open the artwork directly if JavaScript is unavailable. Artwork below the opening scene loads as visitors scroll. The layout adapts to narrower screens.
 
@@ -22,4 +22,4 @@ Artwork was made with OpenAI's built-in image generator and locally finished for
 
 [The Odds Booth](https://apoloplex.com/comics/the-odds-booth/) is the first episode: eleven 1536 × 1024 scenes exploring fine-tuning and theism. Each image is followed by deeper humorous notes. The imagined dialogue is labeled fictional.
 
-Readers can enlarge and zoom the watercolor images, navigate scenes with arrow keys and read descriptions and dialogue transcripts. The eleven episode images use lossless WebP. Episode metadata is in assets/comics/catalog.json; presentation and controls are in reader.css and reader.js.
+Readers can enlarge and zoom the images, navigate scenes with arrow keys and read descriptions and dialogue transcripts. The eleven episode images use lossless WebP. Episode metadata is in assets/comics/catalog.json; presentation and controls are in reader.css and reader.js.
