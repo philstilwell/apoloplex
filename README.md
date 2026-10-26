@@ -8,9 +8,9 @@ Each episode uses as many images as its point requires. Existing character sheet
 
 The site introduces eight apologist caricatures, creator Phil as a questioning park visitor, and eight theme park attractions. Open a portrait for a character sheet with three poses, six expressions and an imagined encounter. Open a park scene to browse the artwork at a larger size. The viewer supports Previous/Next buttons, arrow keys and Escape.
 
-Characters and author credits use first names throughout the site, including labels printed inside the grayscale and watercolor artwork.
+Characters and author credits use first names throughout the site, including labels printed inside the artwork.
 
-Every page load starts in grayscale. The Watercolor controls change all nine character portraits, their full model sheets and all park scenes together, including the enlarged view. The approved grayscale originals remain the default. The park's two editions share the same composition. Grayscale exports are checked for equal red, green and blue channels.
+The public site uses watercolor throughout: all nine character portraits, their model sheets, park scenes and comic images, including enlarged views. Matching grayscale masters remain in the private production library for print.
 
 GitHub Pages serves the root of the main branch. The site uses plain HTML, CSS and JavaScript, with no external runtime dependencies. Gallery links open the artwork directly if JavaScript is unavailable. Artwork below the opening scene loads as visitors scroll. The layout adapts to narrower screens.
 
@@ -20,6 +20,6 @@ Artwork was made with OpenAI's built-in image generator and locally finished for
 
 ## Comics
 
-[The Odds Booth](https://apoloplex.com/comics/the-odds-booth/) is the first episode: eight 1536 × 1024 scenes adapted from Phil’s [Fine-Tuning and Theism](https://freeoffaith.com/2026/08/17/fine-tuning-and-theism/). Each scene has deeper humorous notes beside it, or immediately below on small screens. The imagined William–Phil dialogue is labeled fictional.
+[The Odds Booth](https://apoloplex.com/comics/the-odds-booth/) is the first episode: eleven 1536 × 1024 scenes exploring fine-tuning and theism. Each image is followed by deeper humorous notes. The imagined dialogue is labeled fictional.
 
-Readers start in grayscale and can switch all eight images to watercolor, open a larger view, navigate scenes with arrow keys and read a text transcript. Both editions preserve the same drawing and lettering. The 16 episode images use lossless WebP. Episode metadata is in assets/comics/catalog.json; presentation and controls are in reader.css and reader.js.
+Readers can enlarge and zoom the watercolor images, navigate scenes with arrow keys and read descriptions and dialogue transcripts. The eleven episode images use lossless WebP. Episode metadata is in assets/comics/catalog.json; presentation and controls are in reader.css and reader.js.
