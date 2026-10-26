@@ -1,11 +1,100 @@
-const button = document.getElementById('edition-toggle');
-const picture = document.getElementById('park-image');
-const label = document.getElementById('edition-label');
-button.hidden = false;
-button.addEventListener('click', () => {
-  const color = button.getAttribute('aria-pressed') !== 'true';
-  picture.src = color ? 'assets/midway-watercolor.png' : 'assets/midway-grayscale.png';
-  button.setAttribute('aria-pressed', String(color));
-  button.textContent = color ? 'Show black & white ↗' : 'Show watercolor ↗';
-  label.textContent = `A first look at the midway · ${color ? 'Watercolor' : 'Black & white'}`;
-});
+(() => {
+  'use strict';
+  const items = JSON.parse(document.getElementById('gallery-data').textContent);
+  const byId = new Map(items.map(item => [item.id, item]));
+  const dialog = document.getElementById('gallery-viewer');
+  const image = document.getElementById('viewer-image');
+  const status = document.getElementById('viewer-image-status');
+  let edition = 'gray';
+  let current = null;
+  let opener = null;
+
+  const pathFor = item => edition === 'color' && item.color ? item.color : item.gray;
+  const setText = (id, text) => { document.getElementById(id).textContent = text; };
+  function setEdition(next) {
+    edition = next;
+    document.querySelectorAll('[data-edition]').forEach(button => {
+      button.setAttribute('aria-pressed', String(button.dataset.edition === edition));
+    });
+    document.querySelectorAll('img[data-gray]').forEach(img => {
+      img.src = img.dataset[edition];
+    });
+    document.querySelectorAll('[data-gallery]').forEach(link => {
+      const item = byId.get(link.dataset.gallery);
+      if (item) link.href = pathFor(item);
+    });
+    document.querySelectorAll('[data-edition-caption]').forEach(label => {
+      label.textContent = edition === 'color' ? 'Watercolor edition' : 'Grayscale edition';
+    });
+    setText('edition-status', edition === 'color' ? 'Watercolor scenery selected. Character portraits remain in ink.' : 'Grayscale edition selected.');
+    if (dialog.open && current) renderViewer();
+  }
+
+  function renderViewer() {
+    const group = items.filter(item => item.group === current.group);
+    const index = group.findIndex(item => item.id === current.id);
+    const cast = current.group === 'cast';
+    setText('viewer-count', `${cast ? 'The cast' : 'The park'} / ${index + 1} of ${group.length}`);
+    setText('viewer-kind', cast ? 'Fictional comic role · Ink character sheet' : `${edition === 'color' ? 'Watercolor' : 'Grayscale'} · Apoloplex attraction`);
+    setText('viewer-title', current.title);
+    setText('viewer-subtitle', current.subtitle);
+    setText('viewer-description', current.description);
+    setText('viewer-scene', current.scene);
+    setText('viewer-question', `${cast ? 'The visitor’s question: ' : 'Questions around the queue: '}${current.question}`);
+    document.getElementById('viewer-editions').hidden = cast;
+    document.getElementById('viewer-original').href = pathFor(current);
+    image.alt = current.alt;
+    const next = pathFor(current);
+    if (image.getAttribute('src') !== next) {
+      status.textContent = 'Loading artwork…';
+      image.src = next;
+    }
+  }
+  image.addEventListener('load', () => { status.textContent = ''; });
+  image.addEventListener('error', () => { status.textContent = 'The artwork could not load. Try opening the full image below.'; });
+
+  document.querySelectorAll('.edition-control').forEach(control => { control.hidden = false; });
+  document.querySelectorAll('[data-edition]').forEach(button => {
+    button.addEventListener('click', () => setEdition(button.dataset.edition));
+  });
+  // Ordinary image links remain usable if JavaScript or dialog support is unavailable.
+  if (typeof dialog.showModal !== 'function') return;
+  document.querySelectorAll('[data-gallery]').forEach(link => {
+    link.addEventListener('click', event => {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0) return;
+      const item = byId.get(link.dataset.gallery);
+      if (!item) return;
+      event.preventDefault();
+      opener = link;
+      current = item;
+      renderViewer();
+      dialog.showModal();
+      dialog.scrollTop = 0;
+      document.body.classList.add('viewer-open');
+      document.getElementById('viewer-close').focus();
+    });
+  });
+  function step(direction) {
+    const group = items.filter(item => item.group === current.group);
+    const index = group.findIndex(item => item.id === current.id);
+    current = group[(index + direction + group.length) % group.length];
+    renderViewer();
+  }
+  document.getElementById('viewer-prev').addEventListener('click', () => step(-1));
+  document.getElementById('viewer-next').addEventListener('click', () => step(1));
+  document.getElementById('viewer-close').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('keydown', event => {
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault();
+      step(event.key === 'ArrowLeft' ? -1 : 1);
+    }
+  });
+  dialog.addEventListener('click', event => {
+    const rect = dialog.getBoundingClientRect();
+    if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) dialog.close();
+  });
+  dialog.addEventListener('close', () => {
+    document.body.classList.remove('viewer-open');
+    if (opener) opener.focus({preventScroll:true});
+  });
+})();
