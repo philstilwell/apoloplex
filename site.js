@@ -15,6 +15,7 @@
     const index = group.findIndex(item => item.id === current.id);
     const cast = current.group === 'cast';
     const welcome = current.group === 'welcome';
+    dialog.dataset.galleryGroup = current.group;
     setText('viewer-count', `${cast ? 'The cast' : welcome ? 'Welcome' : 'The park'} / ${index + 1} of ${group.length}`);
     setText('viewer-kind', cast ? `Fictional comic role · Watercolor character sheet` : welcome ? `Watercolor · The whole cast` : `Watercolor · Apoloplex attraction`);
     document.getElementById('viewer-prev').disabled = group.length < 2;
