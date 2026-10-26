@@ -1,6 +1,6 @@
 # Apoloplex
 
-A satirical comic series told through full-size 2:1 landscape scenes set in a theme park where Christian apologists meet curious crowds.
+A satirical comic series told through full-size 3:2 landscape scenes set in a theme park where Christian apologists meet curious crowds.
 
 Website: https://apoloplex.com/
 
@@ -15,3 +15,9 @@ GitHub Pages serves the root of the main branch. The site uses plain HTML, CSS a
 All character roles and park encounters are fictional satire, not quotations or reports of actual encounters. No affiliation or endorsement is implied.
 
 Artwork was made with OpenAI's built-in image generator and locally finished for the Apoloplex project. By Phil Stilwell.
+
+## Comics
+
+[The Odds Booth](https://apoloplex.com/comics/the-odds-booth/) is the first episode: eight 1536 × 1024 scenes adapted from Phil Stilwell’s [Fine-Tuning and Theism](https://freeoffaith.com/2026/08/17/fine-tuning-and-theism/). Each scene has deeper humorous notes beside it, or immediately below on small screens. The imagined Craig–Phil dialogue is labeled fictional.
+
+Readers start in grayscale and can switch all eight images to watercolor, open a larger view, navigate scenes with arrow keys and read a text transcript. Both editions preserve the same drawing and lettering. The 16 episode images use lossless WebP. Episode metadata is in assets/comics/catalog.json; presentation and controls are in reader.css and reader.js.

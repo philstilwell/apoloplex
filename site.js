@@ -26,7 +26,7 @@
     document.querySelectorAll('[data-edition-caption]').forEach(label => {
       label.textContent = edition === 'color' ? 'Watercolor edition' : 'Grayscale edition';
     });
-    setText('edition-status', edition === 'color' ? 'Watercolor edition selected for the characters and the park.' : 'Grayscale edition selected for the characters and the park.');
+    setText('edition-status', edition === 'color' ? 'Watercolor edition selected for the comics, characters and park.' : 'Grayscale edition selected for the comics, characters and park.');
     if (dialog.open && current) renderViewer();
   }
 
