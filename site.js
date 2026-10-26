@@ -5,43 +5,22 @@
   const dialog = document.getElementById('gallery-viewer');
   const image = document.getElementById('viewer-image');
   const status = document.getElementById('viewer-image-status');
-  let edition = 'gray';
   let current = null;
   let opener = null;
 
-  const pathFor = item => edition === 'color' && item.color ? item.color : item.gray;
+  const pathFor = item => item.color;
   const setText = (id, text) => { document.getElementById(id).textContent = text; };
-  function setEdition(next) {
-    edition = next;
-    document.querySelectorAll('[data-edition]').forEach(button => {
-      button.setAttribute('aria-pressed', String(button.dataset.edition === edition));
-    });
-    document.querySelectorAll('img[data-gray]').forEach(img => {
-      img.src = img.dataset[edition];
-    });
-    document.querySelectorAll('[data-gallery]').forEach(link => {
-      const item = byId.get(link.dataset.gallery);
-      if (item) link.href = pathFor(item);
-    });
-    document.querySelectorAll('[data-edition-caption]').forEach(label => {
-      label.textContent = edition === 'color' ? 'Watercolor edition' : 'Grayscale edition';
-    });
-    setText('edition-status', edition === 'color' ? 'Watercolor edition selected for the comics, characters and park.' : 'Grayscale edition selected for the comics, characters and park.');
-    if (dialog.open && current) renderViewer();
-  }
-
   function renderViewer() {
     const group = items.filter(item => item.group === current.group);
     const index = group.findIndex(item => item.id === current.id);
     const cast = current.group === 'cast';
     setText('viewer-count', `${cast ? 'The cast' : 'The park'} / ${index + 1} of ${group.length}`);
-    setText('viewer-kind', cast ? `Fictional comic role · ${edition === 'color' ? 'Watercolor' : 'Grayscale'} character sheet` : `${edition === 'color' ? 'Watercolor' : 'Grayscale'} · Apoloplex attraction`);
+    setText('viewer-kind', cast ? `Fictional comic role · Watercolor character sheet` : `Watercolor · Apoloplex attraction`);
     setText('viewer-title', current.title);
     setText('viewer-subtitle', current.subtitle);
     setText('viewer-description', current.description);
     setText('viewer-scene', current.scene);
     setText('viewer-question', `${cast ? 'The visitor’s question: ' : 'Questions around the queue: '}${current.question}`);
-    document.getElementById('viewer-editions').hidden = !current.color;
     document.getElementById('viewer-original').href = pathFor(current);
     image.alt = current.alt;
     const next = pathFor(current);
@@ -53,10 +32,6 @@
   image.addEventListener('load', () => { status.textContent = ''; });
   image.addEventListener('error', () => { status.textContent = 'The artwork could not load. Try opening the full image below.'; });
 
-  document.querySelectorAll('.edition-control').forEach(control => { control.hidden = false; });
-  document.querySelectorAll('[data-edition]').forEach(button => {
-    button.addEventListener('click', () => setEdition(button.dataset.edition));
-  });
   // Ordinary image links remain usable if JavaScript or dialog support is unavailable.
   if (typeof dialog.showModal !== 'function') return;
   document.querySelectorAll('[data-gallery]').forEach(link => {

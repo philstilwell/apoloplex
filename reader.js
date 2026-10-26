@@ -4,10 +4,9 @@
   const dialog = document.getElementById('scene-viewer');
   const image = document.getElementById('full-scene-image');
   const status = document.getElementById('scene-image-status');
-  let edition = 'gray';
   let current = 0;
   let opener;
-  const path = scene => scene[edition];
+  const path = scene => scene.color;
   function render() {
     const scene = scenes[current];
     document.getElementById('scene-viewer-title').textContent = scene.title;
@@ -21,16 +20,6 @@
       image.src = path(scene);
     }
   }
-  function changeEdition(next) {
-    edition = next;
-    document.querySelectorAll('[data-edition]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.edition === edition)));
-    document.querySelectorAll('img[data-gray]').forEach(img => { img.src = img.dataset[edition]; });
-    document.querySelectorAll('[data-scene]').forEach(link => { link.href = path(scenes.find(scene => scene.id === link.dataset.scene)); });
-    document.getElementById('edition-status').textContent = `${edition === 'gray' ? 'Grayscale' : 'Watercolor'} selected for all ${scenes.length} scenes.`;
-    if (dialog.open) render();
-  }
-  document.querySelectorAll('.edition-control').forEach(control => { control.hidden = false; });
-  document.querySelectorAll('[data-edition]').forEach(button => button.addEventListener('click', () => changeEdition(button.dataset.edition)));
   image.addEventListener('load', () => { status.textContent = ''; });
   image.addEventListener('error', () => { status.textContent = 'The image could not load. Try the original-size link below.'; });
   // Real image links still work without scripting or native dialog support.
