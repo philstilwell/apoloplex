@@ -26,7 +26,7 @@
     document.querySelectorAll('[data-edition-caption]').forEach(label => {
       label.textContent = edition === 'color' ? 'Watercolor edition' : 'Grayscale edition';
     });
-    setText('edition-status', edition === 'color' ? 'Watercolor scenery selected. Character portraits remain in ink.' : 'Grayscale edition selected.');
+    setText('edition-status', edition === 'color' ? 'Watercolor edition selected for the characters and the park.' : 'Grayscale edition selected for the characters and the park.');
     if (dialog.open && current) renderViewer();
   }
 
@@ -35,13 +35,13 @@
     const index = group.findIndex(item => item.id === current.id);
     const cast = current.group === 'cast';
     setText('viewer-count', `${cast ? 'The cast' : 'The park'} / ${index + 1} of ${group.length}`);
-    setText('viewer-kind', cast ? 'Fictional comic role · Ink character sheet' : `${edition === 'color' ? 'Watercolor' : 'Grayscale'} · Apoloplex attraction`);
+    setText('viewer-kind', cast ? `Fictional comic role · ${edition === 'color' ? 'Watercolor' : 'Grayscale'} character sheet` : `${edition === 'color' ? 'Watercolor' : 'Grayscale'} · Apoloplex attraction`);
     setText('viewer-title', current.title);
     setText('viewer-subtitle', current.subtitle);
     setText('viewer-description', current.description);
     setText('viewer-scene', current.scene);
     setText('viewer-question', `${cast ? 'The visitor’s question: ' : 'Questions around the queue: '}${current.question}`);
-    document.getElementById('viewer-editions').hidden = cast;
+    document.getElementById('viewer-editions').hidden = !current.color;
     document.getElementById('viewer-original').href = pathFor(current);
     image.alt = current.alt;
     const next = pathFor(current);
