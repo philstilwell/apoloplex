@@ -1,8 +1,10 @@
 # Apoloplex
 
-A five-panel satirical comic series set in a theme park where Christian apologists meet curious crowds.
+A satirical comic series told through full-size 2:1 landscape scenes set in a theme park where Christian apologists meet curious crowds.
 
 Website: https://apoloplex.com/
+
+Each episode uses as many images as its point requires. Existing character sheets and park establishing views keep their reference formats.
 
 The site introduces eight apologist caricatures, creator Phil Stilwell as a questioning park visitor, and eight theme park attractions. Open a portrait for a character sheet with three poses, six expressions and an imagined encounter. Open a park scene to browse the artwork at a larger size. The viewer supports Previous/Next buttons, arrow keys and Escape.
 
