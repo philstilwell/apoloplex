@@ -1,4 +1,4 @@
-:root{color-scheme:light;--ink:#161616;--paper:#f8f8f6;--muted:#5c5c5c;--rule:#c9c9c7}
+:root{color-scheme:light;--ink:#161616;--paper:#f7f7f7;--muted:#5c5c5c;--rule:#c9c9c9}
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 a{color:inherit;text-decoration:none}
