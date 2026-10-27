@@ -49,6 +49,24 @@
   }
   const scenes = JSON.parse(document.getElementById('scene-data').textContent);
   const dialog = document.getElementById('scene-viewer');
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey || event.isComposing) return;
+    // Dialogs and editing controls keep their own arrow-key behavior.
+    if (document.querySelector('dialog[open]') || event.target.isContentEditable
+      || event.target.closest('input, textarea, select, [role="textbox"], [role="slider"], [role="combobox"], [role="listbox"]')) return;
+    updateActiveScene();
+    const index = readingSteps.indexOf(activeStep);
+    if (index < 0) return;
+    event.preventDefault();
+    const next = readingSteps[index + (event.key === 'ArrowLeft' ? -1 : 1)];
+    if (!next) return;
+    // An immediate jump also lets repeated presses advance reliably.
+    history.replaceState(history.state, '', next.link.hash);
+    next.section.scrollIntoView({behavior:'instant', block:'start'});
+    next.link.focus({preventScroll:true});
+    updateActiveScene();
+  });
   const image = document.getElementById('full-scene-image');
   const status = document.getElementById('scene-image-status');
   const viewport = document.getElementById('scene-image-viewport');
