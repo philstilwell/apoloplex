@@ -1,5 +1,22 @@
 (() => {
   'use strict';
+  // Keep scene jumps clear of both sticky bars, including wrapped phone layouts.
+  const header = document.querySelector('.masthead');
+  const guide = document.querySelector('.reader-guide');
+  if (header && guide) {
+    const measureBars = () => {
+      document.documentElement.style.setProperty('--reader-header-height', `${Math.ceil(header.getBoundingClientRect().height)}px`);
+      document.documentElement.style.setProperty('--reader-guide-height', `${Math.ceil(guide.getBoundingClientRect().height)}px`);
+    };
+    measureBars();
+    if ('ResizeObserver' in window) {
+      const observer = new ResizeObserver(measureBars);
+      observer.observe(header);
+      observer.observe(guide);
+    } else {
+      window.addEventListener('resize', measureBars);
+    }
+  }
   const scenes = JSON.parse(document.getElementById('scene-data').textContent);
   const dialog = document.getElementById('scene-viewer');
   const image = document.getElementById('full-scene-image');
