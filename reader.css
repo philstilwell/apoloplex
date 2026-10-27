@@ -48,9 +48,16 @@ body{background:#fff}
 #scene-image-viewport img{height:100%;max-height:none;object-fit:contain}
 #scene-image-viewport.is-zoomed img{height:auto}
 #viewer-transcript{flex-shrink:0;max-height:42dvh;overflow:auto;overflow-anchor:none}
-#viewer-transcript summary{position:sticky;top:0;background:var(--paper)}
+#viewer-transcript>summary{position:sticky;top:0;background:var(--paper);z-index:1}
 @media(max-width:500px){#scene-viewer[open]{height:calc(100dvh - 20px)}#scene-image-viewport{min-height:120px}}
 
 /* Fallback offsets before script measurement, or when scripting is disabled. */
 @media(max-width:900px){:root{--reader-guide-height:100px}}
 @media(max-width:800px){:root{--reader-header-height:109px;--reader-guide-height:150px}}
+
+.deeper-dive-content{line-height:1.8;overflow-wrap:break-word}
+.deeper-dive-content h3{font:700 21px/1.35 Georgia,serif;letter-spacing:0;margin:26px 0 12px}
+.deeper-dive-content p{margin:0 0 18px}
+.deeper-dive-content .argument-block:first-child h3{margin-top:10px}
+.scene-transcript{border-top:1px solid var(--rule);margin-top:24px}
+.scene-transcript summary{font-size:14px}

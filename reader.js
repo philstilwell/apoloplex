@@ -89,6 +89,22 @@
       return paragraph;
     });
     document.getElementById('viewer-dialogue').replaceChildren(...lines);
+    const deeperDive = document.getElementById('viewer-deeper-dive');
+    if (deeperDive) {
+      deeperDive.replaceChildren(...(scene.deeper_dive || []).map(block => {
+        const section = document.createElement('section');
+        section.className = 'argument-block';
+        const heading = document.createElement('h3');
+        heading.textContent = block.heading;
+        section.append(heading, ...block.paragraphs.map(text => {
+          const paragraph = document.createElement('p');
+          paragraph.textContent = text;
+          return paragraph;
+        }));
+        return section;
+      }));
+      document.getElementById('viewer-accessibility').open = false;
+    }
     transcript.scrollTop = 0;
     if (image.getAttribute('src') !== path(scene)) {
       status.textContent = 'Loading artwork…';
