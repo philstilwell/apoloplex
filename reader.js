@@ -3,10 +3,40 @@
   // Keep scene jumps clear of both sticky bars, including wrapped phone layouts.
   const header = document.querySelector('.masthead');
   const guide = document.querySelector('.reader-guide');
+  const readingSteps = [...(guide?.querySelectorAll('a[href^="#scene-"]') || [])]
+    .map(link => ({link, section: document.getElementById(link.hash.slice(1))}))
+    .filter(step => step.section);
+  let activeStep = null;
+  let readingFrame = 0;
+  function updateActiveScene() {
+    readingFrame = 0;
+    if (!readingSteps.length) return;
+    // A scene remains current through its notes until the next scene reaches this line.
+    const readingLine = Math.ceil(header?.getBoundingClientRect().height || 0)
+      + Math.ceil(guide?.getBoundingClientRect().height || 0) + 18;
+    let next = readingSteps[0];
+    for (const step of readingSteps) {
+      if (step.section.getBoundingClientRect().top > readingLine) break;
+      next = step;
+    }
+    if (next === activeStep) return;
+    activeStep?.link.removeAttribute('aria-current');
+    next.link.setAttribute('aria-current', 'location');
+    activeStep = next;
+  }
+  function scheduleActiveScene() {
+    if (!readingFrame) readingFrame = requestAnimationFrame(updateActiveScene);
+  }
+  window.addEventListener('scroll', scheduleActiveScene, {passive:true});
+  window.addEventListener('resize', scheduleActiveScene);
+  window.addEventListener('pageshow', scheduleActiveScene);
+  document.addEventListener('toggle', scheduleActiveScene, true);
+  scheduleActiveScene();
   if (header && guide) {
     const measureBars = () => {
       document.documentElement.style.setProperty('--reader-header-height', `${Math.ceil(header.getBoundingClientRect().height)}px`);
       document.documentElement.style.setProperty('--reader-guide-height', `${Math.ceil(guide.getBoundingClientRect().height)}px`);
+      scheduleActiveScene();
     };
     measureBars();
     if ('ResizeObserver' in window) {
