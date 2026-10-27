@@ -22,5 +22,17 @@
     "cover": {
       "color": "/assets/comics/the-confidence-booster/001-watercolor.webp"
     }
+  },
+  {
+    "id": "003-the-question-checkpoint",
+    "number": 3,
+    "title": "The Question Checkpoint",
+    "topic": "Equal scrutiny for claims and objections",
+    "deck": "One question reaches the Evidence Trail. The admission form keeps getting longer.",
+    "url": "/comics/the-question-checkpoint/",
+    "scenes": 10,
+    "cover": {
+      "color": "/assets/comics/the-question-checkpoint/001-watercolor.webp"
+    }
   }
 ]
