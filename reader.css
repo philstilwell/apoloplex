@@ -61,3 +61,30 @@ body{background:#fff}
 .deeper-dive-content .argument-block:first-child h3{margin-top:10px}
 .scene-transcript{border-top:1px solid var(--rule);margin-top:24px}
 .scene-transcript summary{font-size:14px}
+
+/* Keep dialogue immediately reachable without opening the longer explanation. */
+.scene-dialogue{width:100%;max-width:780px;margin:-12px auto 0;border-block:1px solid var(--rule);font-size:17px;line-height:1.7}
+.scene-dialogue summary{cursor:pointer;min-height:44px;padding:12px 0;font-weight:600}
+.scene-dialogue summary:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.reading-tools{display:flex;gap:20px;align-items:center;justify-content:space-between;font-size:13px;color:var(--muted);margin:0 0 15px}
+.reading-tools p{margin:0}.reading-tools button{font:inherit;min-height:44px;padding:8px 14px;border:1px solid var(--ink);background:white;color:var(--ink);cursor:pointer}
+.comic-navigation{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;margin:12px 0 50px;border-block:1px solid var(--rule);padding:16px 0}
+.comic-navigation a{display:flex;align-items:center;min-height:44px;font-size:15px;text-decoration:underline;text-underline-offset:4px;max-width:42%}
+.viewer-reading{flex-shrink:0;max-height:42dvh;overflow:auto;overscroll-behavior:contain}
+#viewer-accessibility{margin:0;padding:0 22px 12px;border-top:1px solid var(--rule);font-size:17px;line-height:1.7}
+#viewer-accessibility>summary{cursor:pointer;min-height:44px;padding:12px 0;font-size:17px;font-weight:600}
+#viewer-accessibility>summary:focus-visible{outline:3px solid var(--ink);outline-offset:-3px}
+#viewer-transcript{max-height:none;overflow:visible;margin:0}
+@media(max-width:800px){
+ :root{--reader-header-height:0px;--reader-guide-height:60px}
+ .comic-page .masthead{position:static}
+ .reader-guide{top:0;display:block;padding:7px 0}
+ .reader-guide>p{display:block;margin:0 0 5px;font-size:14px;line-height:1.4}
+ .reader-guide nav{display:flex;flex-wrap:nowrap;overflow-x:auto;width:100%;gap:4px;scrollbar-width:thin;overscroll-behavior-x:contain;margin:0;padding:0}
+ .reader-guide a{flex:0 0 44px;min-height:44px;min-width:44px;padding:6px}
+ .scene-dialogue{font-size:16px}
+ .comic-navigation{margin-right:0}.comic-navigation a{max-width:100%;font-size:14px}
+ #viewer-accessibility{padding-inline:14px;font-size:16px}
+}
+
+.reader-guide .reader-guide-title{font-style:normal;font-weight:700}

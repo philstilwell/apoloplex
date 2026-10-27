@@ -6,23 +6,43 @@
   const readingSteps = [...(guide?.querySelectorAll('a[href^="#scene-"]') || [])]
     .map(link => ({link, section: document.getElementById(link.hash.slice(1))}))
     .filter(step => step.section);
+  const stickyHeaderHeight = () => header && getComputedStyle(header).position === 'sticky' ? Math.ceil(header.getBoundingClientRect().height) : 0;
+  const resume = document.getElementById('resume-reading');
+  const resumeKey = 'apoloplex:reading:' + location.pathname;
+  let savedScene = null;
+  let readingInteracted = false;
+  try { savedScene = localStorage.getItem(resumeKey); } catch (_) { /* Reading works when storage is unavailable. */ }
+  const markReadingInteraction = () => { readingInteracted = true; };
+  window.addEventListener('wheel', markReadingInteraction, {passive:true});
+  window.addEventListener('touchstart', markReadingInteraction, {passive:true});
+  document.addEventListener('keydown', markReadingInteraction);
+  guide?.addEventListener('click', markReadingInteraction);
   let activeStep = null;
   let readingFrame = 0;
   function updateActiveScene() {
     readingFrame = 0;
     if (!readingSteps.length) return;
     // A scene remains current through its notes until the next scene reaches this line.
-    const readingLine = Math.ceil(header?.getBoundingClientRect().height || 0)
+    const readingLine = stickyHeaderHeight()
       + Math.ceil(guide?.getBoundingClientRect().height || 0) + 18;
     let next = readingSteps[0];
     for (const step of readingSteps) {
       if (step.section.getBoundingClientRect().top > readingLine) break;
       next = step;
     }
+    if (readingInteracted) {
+      try { localStorage.setItem(resumeKey, next.section.id); } catch (_) {}
+    }
     if (next === activeStep) return;
     activeStep?.link.removeAttribute('aria-current');
     next.link.setAttribute('aria-current', 'location');
     activeStep = next;
+    const nav = next.link.parentElement;
+    if (nav.scrollWidth > nav.clientWidth) {
+      const linkBox = next.link.getBoundingClientRect(), navBox = nav.getBoundingClientRect();
+      if (linkBox.left < navBox.left) nav.scrollLeft -= navBox.left - linkBox.left;
+      else if (linkBox.right > navBox.right) nav.scrollLeft += linkBox.right - navBox.right;
+    }
   }
   function scheduleActiveScene() {
     if (!readingFrame) readingFrame = requestAnimationFrame(updateActiveScene);
@@ -34,11 +54,12 @@
   scheduleActiveScene();
   if (header && guide) {
     const measureBars = () => {
-      document.documentElement.style.setProperty('--reader-header-height', `${Math.ceil(header.getBoundingClientRect().height)}px`);
+      document.documentElement.style.setProperty('--reader-header-height', `${stickyHeaderHeight()}px`);
       document.documentElement.style.setProperty('--reader-guide-height', `${Math.ceil(guide.getBoundingClientRect().height)}px`);
       scheduleActiveScene();
     };
     measureBars();
+    window.addEventListener('resize', measureBars);
     if ('ResizeObserver' in window) {
       const observer = new ResizeObserver(measureBars);
       observer.observe(header);
@@ -46,6 +67,19 @@
     } else {
       window.addEventListener('resize', measureBars);
     }
+  }
+  const savedStep = readingSteps.find(step => step.section.id === savedScene);
+  if (resume && savedStep && savedStep !== readingSteps[0]) {
+    resume.hidden = false;
+    resume.textContent = `Resume at scene ${readingSteps.indexOf(savedStep) + 1}`;
+    resume.addEventListener('click', () => {
+      readingInteracted = true;
+      history.replaceState(history.state, '', savedStep.link.hash);
+      savedStep.section.scrollIntoView({behavior:'instant', block:'start'});
+      savedStep.link.focus({preventScroll:true});
+      resume.hidden = true;
+      updateActiveScene();
+    });
   }
   const scenes = JSON.parse(document.getElementById('scene-data').textContent);
   const dialog = document.getElementById('scene-viewer');
@@ -124,6 +158,8 @@
       document.getElementById('viewer-accessibility').open = false;
     }
     transcript.scrollTop = 0;
+    const readingPanel = dialog.querySelector('.viewer-reading');
+    if (readingPanel) readingPanel.scrollTop = 0;
     if (image.getAttribute('src') !== path(scene)) {
       status.textContent = 'Loading artwork…';
       image.src = path(scene);
@@ -148,6 +184,7 @@
   }));
   function step(by) {
     current = Math.max(0, Math.min(scenes.length - 1, current + by));
+    setZoom(false);
     render();
   }
   document.getElementById('scene-prev').addEventListener('click', () => step(-1));

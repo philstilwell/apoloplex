@@ -99,3 +99,13 @@ dialog[data-gallery-group="welcome"] .viewer-art img{mix-blend-mode:darken}
 @media(max-width:500px){.header-inner,main,footer{width:calc(100% - 36px)}.header-inner{column-gap:12px}.wordmark{font-size:23px}.wordmark span{font-size:21px;margin-left:6px}.edition-control button{padding-inline:8px}.eyebrow{font-size:9px;margin-bottom:18px}h1{font-size:43px;letter-spacing:-2.3px}h2{font-size:35px}.welcome{padding-top:34px}.description{font-size:17px}.secondary{font-size:14px}.hero-links{font-size:12px}.primary-link{gap:18px}.picture-stamp{font-size:15px;right:16px;bottom:20px;padding:6px 9px}.park-strip{font-size:13px;justify-content:space-between;gap:8px}.park-strip span:last-child,.park-strip span:nth-child(4){display:none}.cast-grid{gap:25px 14px}.cast-card h3{font-size:19px}.cast-card p{font-size:12px}.cast-card .card-number{font-size:8px;letter-spacing:1px}.expand{width:27px;height:27px;right:8px;top:8px;font-size:16px}.park-grid{grid-template-columns:1fr}.park-card h3{font-size:29px}.park-card p{font-size:14px}.park-card-heading{margin-top:17px}.about h2{font-size:32px}.viewer-toolbar{padding:10px 15px}.viewer-navigation{padding:14px 15px}.viewer-copy h2{font-size:31px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.gallery-link img{transition:none}.gallery-link:hover img{transform:none}}
 @media(max-width:600px){.creator-card{grid-template-columns:1fr;gap:24px;scroll-margin-top:145px}.creator-card .portrait{width:min(100%,320px);justify-self:center}.creator-card h3{font-size:31px}.creator-card p{font-size:14px}}
+
+/* Compact comic browsing keeps the growing collection scannable. */
+.comic-index{display:flex;flex-wrap:wrap;gap:10px 22px;margin:0 0 32px;padding:20px 0;border-block:1px solid #aaa}
+.comic-index a{min-height:44px;display:inline-flex;gap:10px;align-items:center;text-decoration:none}
+.comic-index span{font-weight:700;font-variant-numeric:tabular-nums;color:#666}
+.episode-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 28px}
+.episode-grid .episode-card{display:flex;flex-direction:column;gap:0;margin:0;padding:0 0 28px}
+.episode-grid .episode-card-copy{padding:22px 0 0}.episode-grid .episode-card h3{font-size:clamp(26px,3vw,40px)}
+.visitors{margin-top:32px;padding-top:24px;border-top:1px solid #aaa}.visitors>div{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}.visitors p{line-height:1.65}
+@media(max-width:800px){.episode-grid,.visitors>div{grid-template-columns:1fr}.comic-index{display:grid;gap:0}.visitors>div{gap:0}}

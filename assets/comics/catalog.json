@@ -8,7 +8,23 @@
     "url": "/comics/the-odds-booth/",
     "scenes": 11,
     "cover": {
-      "color": "/assets/comics/the-odds-booth/v4/001-watercolor.webp?v=b8eeed4e4074"
+      "color": "/assets/comics/the-odds-booth/v4/001-watercolor.webp?v=b8eeed4e4074",
+      "display": [
+        {
+          "path": "site/assets/comics/the-odds-booth/v4/001-watercolor-768w.webp",
+          "width": 768,
+          "height": 512,
+          "sha256": "af65236a9db66f8640382070835226a0575fa42815276f7a5776c0d1d2131e34",
+          "url": "/assets/comics/the-odds-booth/v4/001-watercolor-768w.webp?v=af65236a9db6"
+        },
+        {
+          "path": "site/assets/comics/the-odds-booth/v4/001-watercolor-1152w.webp",
+          "width": 1152,
+          "height": 768,
+          "sha256": "c5b42c40528d2fcf4464c23221e7e736f8ccc477ecad17d236d9bd2d0922945a",
+          "url": "/assets/comics/the-odds-booth/v4/001-watercolor-1152w.webp?v=c5b42c40528d"
+        }
+      ]
     }
   },
   {
@@ -20,7 +36,23 @@
     "url": "/comics/the-confidence-booster/",
     "scenes": 10,
     "cover": {
-      "color": "/assets/comics/the-confidence-booster/001-watercolor.webp?v=ec4477ee7603"
+      "color": "/assets/comics/the-confidence-booster/001-watercolor.webp?v=ed63b6ed9705",
+      "display": [
+        {
+          "path": "site/assets/comics/the-confidence-booster/001-watercolor-768w.webp",
+          "width": 768,
+          "height": 512,
+          "sha256": "d14b648574eb1a4876993a691a483a6a8712724d956078b4807174193e956043",
+          "url": "/assets/comics/the-confidence-booster/001-watercolor-768w.webp?v=d14b648574eb"
+        },
+        {
+          "path": "site/assets/comics/the-confidence-booster/001-watercolor-1152w.webp",
+          "width": 1152,
+          "height": 768,
+          "sha256": "f161f6ad2f168507daf1255b815d78658d1c5db8bc6116a186bbbe68cb716122",
+          "url": "/assets/comics/the-confidence-booster/001-watercolor-1152w.webp?v=f161f6ad2f16"
+        }
+      ]
     }
   },
   {
@@ -32,7 +64,23 @@
     "url": "/comics/the-question-checkpoint/",
     "scenes": 10,
     "cover": {
-      "color": "/assets/comics/the-question-checkpoint/001-watercolor.webp?v=2d90314159c7"
+      "color": "/assets/comics/the-question-checkpoint/001-watercolor.webp?v=2d90314159c7",
+      "display": [
+        {
+          "path": "site/assets/comics/the-question-checkpoint/001-watercolor-768w.webp",
+          "width": 768,
+          "height": 512,
+          "sha256": "ddd31ae3c33d38787bfaa52e27923c5544e303f993ede706836eb11fb67ac412",
+          "url": "/assets/comics/the-question-checkpoint/001-watercolor-768w.webp?v=ddd31ae3c33d"
+        },
+        {
+          "path": "site/assets/comics/the-question-checkpoint/001-watercolor-1152w.webp",
+          "width": 1152,
+          "height": 768,
+          "sha256": "a4c06b41e8c836a9dbca546cfd8b5c6cd1a744a35ea71ff1ae86e74ce9986dbb",
+          "url": "/assets/comics/the-question-checkpoint/001-watercolor-1152w.webp?v=a4c06b41e8c8"
+        }
+      ]
     }
   },
   {
@@ -44,7 +92,23 @@
     "url": "/comics/the-knowledge-badge/",
     "scenes": 9,
     "cover": {
-      "color": "/assets/comics/the-knowledge-badge/v1/001-watercolor.webp"
+      "color": "/assets/comics/the-knowledge-badge/v1/001-watercolor.webp",
+      "display": [
+        {
+          "path": "site/assets/comics/the-knowledge-badge/v1/001-watercolor-768w.webp",
+          "width": 768,
+          "height": 512,
+          "sha256": "a2074c1b5cdfc824efb4f2abab0048dd927f5b3ed4e8722567f4a73d196ae666",
+          "url": "/assets/comics/the-knowledge-badge/v1/001-watercolor-768w.webp?v=a2074c1b5cdf"
+        },
+        {
+          "path": "site/assets/comics/the-knowledge-badge/v1/001-watercolor-1152w.webp",
+          "width": 1152,
+          "height": 768,
+          "sha256": "92b59218e0ae691f5c772355d4d8394a32bbffc9f93529b56360a65b355f2e87",
+          "url": "/assets/comics/the-knowledge-badge/v1/001-watercolor-1152w.webp?v=92b59218e0ae"
+        }
+      ]
     }
   }
 ]
