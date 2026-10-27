@@ -34,5 +34,17 @@
     "cover": {
       "color": "/assets/comics/the-question-checkpoint/001-watercolor.webp"
     }
+  },
+  {
+    "id": "004-the-knowledge-badge",
+    "number": 4,
+    "title": "The Knowledge Badge",
+    "topic": "Whether a knowledge label improves a belief's support, and how claimed reliability should be assessed",
+    "deck": "At Proof & Prizes, a shiny knowledge badge meets a less decorative demand: show what earns the confidence.",
+    "url": "/comics/the-knowledge-badge/",
+    "scenes": 9,
+    "cover": {
+      "color": "/assets/comics/the-knowledge-badge/v1/001-watercolor.webp"
+    }
   }
 ]
