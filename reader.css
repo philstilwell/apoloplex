@@ -88,3 +88,24 @@ body{background:#fff}
 }
 
 .reader-guide .reader-guide-title{font-style:normal;font-weight:700}
+
+/* A substantial final argument, revealed at the reader's invitation. */
+.closing-article{margin:24px 0 64px;border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--paper,#f7f7f5)}
+.closing-article>summary{position:relative;cursor:pointer;list-style:none;padding:36px clamp(22px,4vw,64px);padding-right:90px}
+.closing-article>summary::-webkit-details-marker{display:none}
+.closing-article>summary::after{content:'+';position:absolute;right:30px;top:50%;transform:translateY(-50%);font:300 40px/1 system-ui}
+.closing-article[open]>summary::after{content:'−'}
+.closing-article>summary:focus-visible{outline:3px solid var(--ink);outline-offset:5px}
+.closing-article>summary:hover .closing-article-title{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+.closing-article h2{margin:0}
+.closing-article-kicker{display:block;font:700 11px/1.5 system-ui;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px;color:var(--muted)}
+.closing-article-title{display:block;max-width:26ch;font:700 clamp(30px,3.4vw,48px)/1.12 Georgia,serif;letter-spacing:-.025em}
+.closing-article-cue{display:block;font:400 14px/1.6 system-ui;letter-spacing:0;margin-top:18px;color:var(--muted)}
+.closing-article .when-open{display:none}.closing-article[open] .when-open{display:inline}.closing-article[open] .when-closed{display:none}
+.closing-article-body{max-width:760px;margin:0 auto;padding:12px 28px 50px;font:20px/1.8 Georgia,serif;overflow-wrap:break-word}
+.closing-article-body p{margin:0 0 23px}
+.closing-article-introduction{font-size:23px;line-height:1.65;border-bottom:1px solid var(--rule);padding-bottom:12px;margin-bottom:36px}
+.closing-article-section{margin:34px 0 0}
+.closing-article-section h3{font:700 26px/1.25 Georgia,serif;margin:0 0 18px;letter-spacing:-.015em}
+.closing-article-section:last-child p:last-child{margin-bottom:0}
+@media(max-width:600px){.closing-article{margin-bottom:40px}.closing-article>summary{padding:26px 54px 26px 20px}.closing-article>summary::after{right:18px;font-size:32px}.closing-article-kicker{font-size:10px;letter-spacing:.1em}.closing-article-title{font-size:30px}.closing-article-body{padding:0 20px 30px;font-size:18px;line-height:1.75}.closing-article-introduction{font-size:20px}.closing-article-section h3{font-size:24px}}
