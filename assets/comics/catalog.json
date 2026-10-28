@@ -110,5 +110,33 @@
         }
       ]
     }
+  },
+  {
+    "id": "005-the-prayer-guarantee",
+    "number": 5,
+    "title": "The Prayer Guarantee",
+    "topic": "What remains of a promise when every possible outcome is called an answer?",
+    "deck": "An unmet request reaches the Prayer Guarantee complaints desk. The explanations keep arriving. The food did not.",
+    "url": "/comics/the-prayer-guarantee/",
+    "scenes": 11,
+    "cover": {
+      "color": "/assets/comics/the-prayer-guarantee/001-watercolor.webp",
+      "display": [
+        {
+          "path": "site/assets/comics/the-prayer-guarantee/001-watercolor-768w.webp",
+          "width": 768,
+          "height": 512,
+          "sha256": "3650fd55b46b09f3639b4661f994435e048299fc4a3f09560be2a7f119d664d9",
+          "url": "/assets/comics/the-prayer-guarantee/001-watercolor-768w.webp?v=3650fd55b46b"
+        },
+        {
+          "path": "site/assets/comics/the-prayer-guarantee/001-watercolor-1152w.webp",
+          "width": 1152,
+          "height": 768,
+          "sha256": "5360fff041858d61906cb4d9f0c5b62b6158891a6f2e7ff6ae53da667fc23b06",
+          "url": "/assets/comics/the-prayer-guarantee/001-watercolor-1152w.webp?v=5360fff04185"
+        }
+      ]
+    }
   }
 ]
