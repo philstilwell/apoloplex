@@ -138,5 +138,33 @@
         }
       ]
     }
+  },
+  {
+    "id": "006-the-floating-fortress",
+    "number": 6,
+    "title": "The Floating Fortress",
+    "topic": "When does an explanation connect with reality, and when does it merely protect itself?",
+    "deck": "An elaborate fortress model has a beautifully consistent plan. The visitors ask what holds the argument up.",
+    "url": "/comics/the-floating-fortress/",
+    "scenes": 16,
+    "cover": {
+      "color": "/assets/comics/the-floating-fortress/001-watercolor.webp",
+      "display": [
+        {
+          "path": "site/assets/comics/the-floating-fortress/001-watercolor-768w.webp",
+          "width": 768,
+          "height": 512,
+          "sha256": "11b5805015282b1fb1be15e47b42703bdb933ed8f99a5e0dff7f5cfcedae0b13",
+          "url": "/assets/comics/the-floating-fortress/001-watercolor-768w.webp?v=11b580501528"
+        },
+        {
+          "path": "site/assets/comics/the-floating-fortress/001-watercolor-1152w.webp",
+          "width": 1152,
+          "height": 768,
+          "sha256": "c8b76bf12dbd832c4cf21474a4a30b9f4a33782f2878c3eab5e1545e15f9a1ea",
+          "url": "/assets/comics/the-floating-fortress/001-watercolor-1152w.webp?v=c8b76bf12dbd"
+        }
+      ]
+    }
   }
 ]
