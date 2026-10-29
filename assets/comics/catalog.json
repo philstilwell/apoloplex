@@ -166,5 +166,33 @@
         }
       ]
     }
+  },
+  {
+    "id": "007-the-assumption-tower",
+    "number": 7,
+    "title": "The Assumption Tower",
+    "topic": "When does an added claim about God earn its place in an explanation?",
+    "deck": "At Proof & Prizes, a tower of claims meets a question: what does each addition actually explain?",
+    "url": "/comics/the-assumption-tower/",
+    "scenes": 13,
+    "cover": {
+      "color": "/assets/comics/the-assumption-tower/001-watercolor.webp",
+      "display": [
+        {
+          "path": "site/assets/comics/the-assumption-tower/001-watercolor-768w.webp",
+          "width": 768,
+          "height": 512,
+          "sha256": "15b0790b3707f2951b6daafcc72a5f746bdc3c63361a31c71cf298baf3bc04ce",
+          "url": "/assets/comics/the-assumption-tower/001-watercolor-768w.webp?v=15b0790b3707"
+        },
+        {
+          "path": "site/assets/comics/the-assumption-tower/001-watercolor-1152w.webp",
+          "width": 1152,
+          "height": 768,
+          "sha256": "544db92c7dcfb8b779452fa67cababa82c669590860f143644079eb30d9d415d",
+          "url": "/assets/comics/the-assumption-tower/001-watercolor-1152w.webp?v=544db92c7dcf"
+        }
+      ]
+    }
   }
 ]
