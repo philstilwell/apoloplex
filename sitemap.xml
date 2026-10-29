@@ -345,4 +345,43 @@
       <image:loc>https://apoloplex.com/assets/comics/the-assumption-tower/013-watercolor.webp</image:loc>
     </image:image>
   </url>
+  <url>
+    <loc>https://apoloplex.com/comics/the-map-that-cant-be-wrong/</loc>
+    <image:image>
+      <image:loc>https://apoloplex.com/assets/comics/the-map-that-cant-be-wrong/001-watercolor.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://apoloplex.com/assets/comics/the-map-that-cant-be-wrong/002-watercolor.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://apoloplex.com/assets/comics/the-map-that-cant-be-wrong/003-watercolor.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://apoloplex.com/assets/comics/the-map-that-cant-be-wrong/004-watercolor.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://apoloplex.com/assets/comics/the-map-that-cant-be-wrong/005-watercolor.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://apoloplex.com/assets/comics/the-map-that-cant-be-wrong/006-watercolor.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://apoloplex.com/assets/comics/the-map-that-cant-be-wrong/007-watercolor.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://apoloplex.com/assets/comics/the-map-that-cant-be-wrong/008-watercolor.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://apoloplex.com/assets/comics/the-map-that-cant-be-wrong/009-watercolor.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://apoloplex.com/assets/comics/the-map-that-cant-be-wrong/010a-watercolor.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://apoloplex.com/assets/comics/the-map-that-cant-be-wrong/010b-watercolor.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://apoloplex.com/assets/comics/the-map-that-cant-be-wrong/011-watercolor.webp</image:loc>
+    </image:image>
+  </url>
 </urlset>

@@ -194,5 +194,33 @@
         }
       ]
     }
+  },
+  {
+    "id": "008-the-map-that-cant-be-wrong",
+    "number": 8,
+    "title": "The Map That Can't Be Wrong",
+    "topic": "Evidence, correction and protected commitments",
+    "deck": "A closed gate starts a conversation about what would make a belief change.",
+    "url": "/comics/the-map-that-cant-be-wrong/",
+    "scenes": 12,
+    "cover": {
+      "color": "/assets/comics/the-map-that-cant-be-wrong/001-watercolor.webp",
+      "display": [
+        {
+          "path": "site/assets/comics/the-map-that-cant-be-wrong/001-watercolor-768w.webp",
+          "width": 768,
+          "height": 512,
+          "sha256": "3bf87744238141cf1853d7a91024c827803b4d30c26f6a7573aeea2a0fe82774",
+          "url": "/assets/comics/the-map-that-cant-be-wrong/001-watercolor-768w.webp?v=3bf877442381"
+        },
+        {
+          "path": "site/assets/comics/the-map-that-cant-be-wrong/001-watercolor-1152w.webp",
+          "width": 1152,
+          "height": 768,
+          "sha256": "d233cf1e72c30121b46b67d2ff1b28ce3c9e05767320189a5c3751b01ce2c80a",
+          "url": "/assets/comics/the-map-that-cant-be-wrong/001-watercolor-1152w.webp?v=d233cf1e72c3"
+        }
+      ]
+    }
   }
 ]
