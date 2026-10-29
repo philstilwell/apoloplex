@@ -1,6 +1,6 @@
 # Apoloplex
 
-A satirical comic series told through full-size 3:2 landscape scenes set in a theme park where Christian apologists meet curious crowds.
+A philosophical comic series for readers of Christian apologetics, skepticism and philosophy of religion. Fictional theme-park conversations examine premises, evidence, substantive objections and what follows.
 
 Website: https://apoloplex.com/
 
@@ -20,6 +20,8 @@ Artwork was made with OpenAI's built-in image generator and locally finished for
 
 ## Comics
 
-[The Odds Booth](https://apoloplex.com/comics/the-odds-booth/) is the first episode: eleven 1536 × 1024 scenes exploring fine-tuning and theism. Each image is followed by deeper humorous notes. The imagined dialogue is labeled fictional.
+[Browse all comics](https://apoloplex.com/#comics), covering fine-tuning, faith and evidence, the burden of proof, religious knowledge, petitionary prayer and theological explanation. Each scene has a dialogue transcript and deeper analysis; each complete strip ends with an extended skeptical argument addressing objections and limits.
 
-Readers can enlarge and zoom the images, navigate scenes with arrow keys and read descriptions and dialogue transcripts. The eleven episode images use lossless WebP. Episode metadata is in assets/comics/catalog.json; presentation and controls are in reader.css and reader.js.
+Readers can enlarge and zoom the images, navigate scenes with arrow keys and read descriptions and dialogue transcripts. Episode images use lossless WebP. Episode metadata is in assets/comics/catalog.json; presentation and controls are in reader.css and reader.js.
+
+Every published page includes a unique search title and description, its canonical address, sharing previews and structured descriptions of the comic series. The [sitemap](https://apoloplex.com/sitemap.xml) lists published pages and artwork and is advertised in robots.txt. All dialogue and analysis are available in the page HTML without requiring JavaScript.

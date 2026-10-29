@@ -5,6 +5,10 @@ body{background:#fff}
 .episode-heading{display:grid;grid-template-columns:1.4fr 1fr;gap:80px;padding:62px 0 42px;align-items:start}
 .episode-heading h1{font-size:clamp(48px,5vw,76px);letter-spacing:-3px;margin-bottom:22px}
 .episode-deck{font:21px/1.5 Georgia,serif;max-width:620px;margin:0}
+.episode-search-summary{font-size:16px;line-height:1.65;max-width:650px;margin:20px 0 0;color:var(--muted)}
+.episode-breadcrumb{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:8px 12px;width:auto;margin:22px 0 0;font-size:12px;line-height:1.5}
+.episode-breadcrumb a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:3px}
+.episode-breadcrumb span{display:inline-flex;align-items:center;min-height:44px}
 .episode-context{max-width:440px;justify-self:end;border-left:1px solid var(--rule);padding-left:30px}
 .episode-context .eyebrow{margin-bottom:16px}.episode-context p{margin:0 0 14px;font-size:13px;line-height:1.7}
 .episode-context .source-credit,.episode-context .fiction-notice{font-size:12px;color:var(--muted)}
