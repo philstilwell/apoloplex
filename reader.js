@@ -1,5 +1,16 @@
 (() => {
   'use strict';
+  // Reveal the nested form when returning from the email service or a saved link.
+  function revealFeedback() {
+    if (location.hash !== '#feedback' && location.hash !== '#feedback-sent') return;
+    const target = document.getElementById(location.hash.slice(1));
+    const accordion = target?.closest('details.closing-article');
+    if (!accordion) return;
+    accordion.open = true;
+    requestAnimationFrame(() => target.scrollIntoView({behavior:'instant', block:'start'}));
+  }
+  revealFeedback();
+  window.addEventListener('hashchange', revealFeedback);
   // Keep scene jumps clear of both sticky bars, including wrapped phone layouts.
   const header = document.querySelector('.masthead');
   const guide = document.querySelector('.reader-guide');
