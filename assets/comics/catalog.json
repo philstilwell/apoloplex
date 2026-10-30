@@ -222,5 +222,33 @@
         }
       ]
     }
+  },
+  {
+    "id": "009-the-trust-fall",
+    "number": 9,
+    "title": "The Trust Fall",
+    "topic": "Childlike faith, testimony and the grounds of trust",
+    "deck": "A small trust fall raises a larger question: what gives a promise its credibility?",
+    "url": "/comics/the-trust-fall/",
+    "scenes": 11,
+    "cover": {
+      "color": "/assets/comics/the-trust-fall/001-watercolor.webp",
+      "display": [
+        {
+          "path": "site/assets/comics/the-trust-fall/001-watercolor-768w.webp",
+          "width": 768,
+          "height": 512,
+          "sha256": "46b71b495d1f47597da663df053b8657d63610228cc1211c57d27fc9ba759dfc",
+          "url": "/assets/comics/the-trust-fall/001-watercolor-768w.webp?v=46b71b495d1f"
+        },
+        {
+          "path": "site/assets/comics/the-trust-fall/001-watercolor-1152w.webp",
+          "width": 1152,
+          "height": 768,
+          "sha256": "673bfd6d32e5eda9cd43bb57284ee620dce2437e50c61c9823d04fed470e4dad",
+          "url": "/assets/comics/the-trust-fall/001-watercolor-1152w.webp?v=673bfd6d32e5"
+        }
+      ]
+    }
   }
 ]
